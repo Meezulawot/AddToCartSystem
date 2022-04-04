@@ -6,11 +6,9 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  ToastAndroid,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import ProductDetails from './ProductDetails';
 
 export default function Products({productItem}) {
   const navigation = useNavigation();
@@ -27,13 +25,6 @@ export default function Products({productItem}) {
     } catch (error) {
       console.log(error);
     }
-
-    // AsyncStorage.getItem('CART')?.then(products => {
-    //   const arr = products ? JSON.parse(products) : [];
-    //   arr.push(productItem);
-    //   AsyncStorage.setItem('CART', JSON.stringify(arr));
-    //   navigation.navigate('Cart');
-    // });
   };
 
   return (

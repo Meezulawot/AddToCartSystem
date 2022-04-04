@@ -15,12 +15,12 @@ export default function Cart() {
       setLoading(true);
       const product = await AsyncStorage.getItem('CART');
       setProductsCart(JSON.parse(product));
-      
+      getTotal(cartproducts);
     } catch (error) {
       console.log(error);
     } finally {
       setLoading(false);
-      getTotal(cartproducts);
+      
     }
   };
 
@@ -48,10 +48,6 @@ export default function Cart() {
 
     setTotal(total);
   };
-
-  // const discountedprice =(product)=>{
-  //   discountPrice = product.price - ((product.price * product.discountPercentage)/ 100)
-  // }
 
   useEffect(() => {
     getProducts();
